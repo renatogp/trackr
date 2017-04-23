@@ -6,7 +6,7 @@ include HISTORY.rst
 include LICENSE
 include README.rst
 
-recursive-include carriers
+recursive-include carriers *.py
 
 recursive-include tests *
 recursive-exclude * __pycache__
