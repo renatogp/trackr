@@ -1,1 +1,1 @@
-from .ect import ECT
+from .ect import ECT  # noqa
