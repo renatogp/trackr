@@ -6,14 +6,13 @@ from setuptools import setup
 with open('README.rst') as readme_file:
     readme = readme_file.read()
 
-requirements = [
-    'Click>=6.0',
-    # TODO: put package requirements here
-]
+with open('requirements.txt') as requirements_file:
+    requirements = requirements_file.read().split('\n')
 
-test_requirements = [
-    # TODO: put package test requirements here
-]
+with open('requirements_dev.txt') as requirements_dev_file:
+    test_requirements = requirements + \
+        requirements_dev_file.read().split('\n')[1:]
+
 
 setup(
     name='trackr',
