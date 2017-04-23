@@ -1,0 +1,37 @@
+interactions:
+- request:
+    body: !!python/unicode "<?xml version='1.0' encoding='utf-8'?>\n<soap-env:Envelope
+      xmlns:soap-env=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap-env:Body>\n
+      \   <ns0:buscaEventos xmlns:ns0=\"http://resource.webservice.correios.com.br/\">\n
+      \     <usuario>********</usuario>\n      <senha>********</senha>\n      <tipo>L</tipo>\n
+      \     <resultado>T</resultado>\n      <lingua>101</lingua>\n      <objetos>SX123456789BR</objetos>\n
+      \   </ns0:buscaEventos>\n  </soap-env:Body>\n</soap-env:Envelope>\n"
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['451']
+      Content-Type: [text/xml; charset=utf-8]
+      SOAPAction: ['"buscaEventos"']
+      User-Agent: [Zeep/1.5.0 (www.python-zeep.org)]
+    method: POST
+    uri: http://webservice.correios.com.br/service/rastro
+  response:
+    body: {string: "<?xml version=\"1.0\" encoding=\"utf-8\"?><soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\"><soapenv:Header><X-OPNET-Transaction-Trace:X-OPNET-Transaction-Trace
+        xmlns:X-OPNET-Transaction-Trace=\"http://opnet.com\">pid=32153,requestid=f2eeea3417f2c725d1903fa5f6be6a4b17aa5d3029f269ad</X-OPNET-Transaction-Trace:X-OPNET-Transaction-Trace></soapenv:Header><soapenv:Body><ns2:buscaEventosResponse
+        xmlns:ns2=\"http://resource.webservice.correios.com.br/\"><return><versao>2.0</versao><qtd>1</qtd><objeto><numero>SX123456789BR</numero><erro>Objeto
+        n\xE3o encontrado na base de dados dos Correios.</erro></objeto></return></ns2:buscaEventosResponse></soapenv:Body></soapenv:Envelope>"}
+    headers:
+      cache-control: ['no-cache="set-cookie, set-cookie2"']
+      connection: [Keep-Alive]
+      content-language: [pt-BR]
+      content-length: ['692']
+      content-type: [text/xml; charset=utf-8]
+      date: ['Sun, 23 Apr 2017 17:08:30 GMT']
+      expires: ['Thu, 01 Dec 1994 16:00:00 GMT']
+      keep-alive: ['timeout=2, max=99993']
+      set-cookie: [_op_aixPageId=a2_64eee025-a758-4516-b506-9de56ee5c365; Path=/]
+      x-opnet-transaction-trace: [a2_64eee025-a758-4516-b506-9de56ee5c365]
+      x-powered-by: [Servlet/3.0]
+    status: {code: 200, message: OK}
+version: 1

@@ -1,0 +1,45 @@
+interactions:
+- request:
+    body: !!python/unicode "<?xml version='1.0' encoding='utf-8'?>\n<soap-env:Envelope
+      xmlns:soap-env=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap-env:Body>\n
+      \   <ns0:buscaEventos xmlns:ns0=\"http://resource.webservice.correios.com.br/\">\n
+      \     <usuario>********</usuario>\n      <senha>********</senha>\n      <tipo>L</tipo>\n
+      \     <resultado>T</resultado>\n      <lingua>101</lingua>\n      <objetos>PN871429404BR</objetos>\n
+      \   </ns0:buscaEventos>\n  </soap-env:Body>\n</soap-env:Envelope>\n"
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['451']
+      Content-Type: [text/xml; charset=utf-8]
+      SOAPAction: ['"buscaEventos"']
+      User-Agent: [Zeep/1.5.0 (www.python-zeep.org)]
+    method: POST
+    uri: http://webservice.correios.com.br/service/rastro
+  response:
+    body: {string: "<?xml version=\"1.0\" encoding=\"utf-8\"?><soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\"><soapenv:Header><X-OPNET-Transaction-Trace:X-OPNET-Transaction-Trace
+        xmlns:X-OPNET-Transaction-Trace=\"http://opnet.com\">pid=19792,requestid=500e834d4e8123c8c940d65bc665b9438d774342876caa9f</X-OPNET-Transaction-Trace:X-OPNET-Transaction-Trace></soapenv:Header><soapenv:Body><ns2:buscaEventosResponse
+        xmlns:ns2=\"http://resource.webservice.correios.com.br/\"><return><versao>2.0</versao><qtd>1</qtd><objeto><numero>PN871429404BR</numero><sigla>PN</sigla><nome>ENCOMENDA
+        PAC (ETIQ LOGICA)</nome><categoria>ENCOMENDA PAC</categoria><evento><tipo>RO</tipo><status>01</status><data>20/04/2017</data><hora>16:54</hora><descricao>Objeto
+        encaminhado </descricao><local>CTCE BAURU</local><codigo>17034970</codigo><cidade>BAURU</cidade><uf>SP</uf><destino><local>CTE
+        BELO HORIZONTE</local><codigo>31276970</codigo><cidade>BELO HORIZONTE</cidade><bairro>Universit\xE1rio</bairro><uf>MG</uf></destino></evento><evento><tipo>RO</tipo><status>01</status><data>17/04/2017</data><hora>19:43</hora><descricao>Objeto
+        encaminhado </descricao><local>AGF SANTOS DUMONT</local><codigo>14405972</codigo><cidade>Franca</cidade><uf>SP</uf><destino><local>CTCE
+        RIBEIRAO PRETO</local><codigo>14095970</codigo><cidade>RIBEIRAO PRETO</cidade><bairro>PARQUE
+        INDUSTRIAL LAGOINHA</bairro><uf>SP</uf></destino></evento><evento><tipo>PO</tipo><status>09</status><data>17/04/2017</data><hora>17:20</hora><descricao>Objeto
+        postado ap\xF3s o hor\xE1rio limite da ag\xEAncia</descricao><detalhe>Objeto
+        sujeito a encaminhamento no pr\xF3ximo dia \xFAtil</detalhe><local>AGF SANTOS
+        DUMONT</local><codigo>14405972</codigo><cidade>Franca</cidade><uf>SP</uf></evento></objeto></return></ns2:buscaEventosResponse></soapenv:Body></soapenv:Envelope>"}
+    headers:
+      cache-control: ['no-cache="set-cookie, set-cookie2"']
+      connection: [Keep-Alive]
+      content-language: [pt-BR]
+      content-length: ['1802']
+      content-type: [text/xml; charset=utf-8]
+      date: ['Sun, 23 Apr 2017 17:54:56 GMT']
+      expires: ['Thu, 01 Dec 1994 16:00:00 GMT']
+      keep-alive: ['timeout=2, max=99983']
+      set-cookie: [_op_aixPageId=a2_ef3fd6b8-bd17-4c23-bf01-0c60134a1b45; Path=/]
+      x-opnet-transaction-trace: [a2_ef3fd6b8-bd17-4c23-bf01-0c60134a1b45]
+      x-powered-by: [Servlet/3.0]
+    status: {code: 200, message: OK}
+version: 1
