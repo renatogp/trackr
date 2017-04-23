@@ -24,12 +24,14 @@ trackr
 * Documentation: https://trackr.readthedocs.io.
 
 
-`trackr` is a lightweight Python lib to access carriers' tracking information.
+``trackr`` is a lightweight Python lib to access carriers' tracking information.
 
 Installation
 ------------
 
-`pip install trackr`
+``pip install trackr``
+
+Works with Python `2.7`, `3.3`, `3.4` and `3.5`.
 
 
 Usage
@@ -55,8 +57,8 @@ Or also using Trackr cli:
 Available carriers
 ------------------
 
-* `ect` (brazilian "Correios")
-* `fake` (for testing purposes)
+* ``ect`` (brazilian "Correios")
+* ``fake`` (for testing purposes)
 
 
 ECT
@@ -113,6 +115,9 @@ To add a new carrier, inherit `carriers.base.BaseCarrier` and fillout the `track
         name = 'My Carrier'
 
         def track(self, object_id):
+
+            # ... fetch data from carrier's data source
+
             package = self.create_package(
                 object_id=object_id,
                 service_name='Express service',
@@ -135,7 +140,7 @@ To add a new carrier, inherit `carriers.base.BaseCarrier` and fillout the `track
 
             return package
 
-Then update the carrier mapping on `trackr/carriers/__init__.py` (this should be improved with some autodiscover feature). Remember to write tests!
+Then update the carrier mapping on ``trackr/carriers/__init__.py`` (this should be improved with some autodiscover feature). Remember to write tests!
 
 
 Credits
