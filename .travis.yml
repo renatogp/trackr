@@ -2,7 +2,19 @@
 # This file will be regenerated if you run travis_pypi_setup.py
 
 language: python
-python: 3.5
+python: 3.6
+sudo: false
+
+addons:
+  apt:
+    sources:
+      - deadsnakes
+    packages:
+      - python3.5-dev
+      - python3.5
+      - libssl-dev
+      - build-essential
+      - libffi-dev
 
 env:
   - TOXENV=py36
