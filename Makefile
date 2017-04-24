@@ -51,18 +51,13 @@ lint: ## check style with flake8
 	flake8 --ignore=E501 trackr tests
 
 test: ## run tests quickly with the default Python
-	py.test
-	
+	pytest
 
 test-all: ## run tests on every Python version with tox
 	tox
 
 coverage: ## check code coverage quickly with the default Python
-	coverage run --source trackr -m pytest
-	
-		coverage report -m
-		coverage html
-		$(BROWSER) htmlcov/index.html
+	pytest --cov trackr --cov-report xml --cov-report term-missing
 
 docs: ## generate Sphinx HTML documentation, including API docs
 	rm -f docs/trackr.rst
