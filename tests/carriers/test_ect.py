@@ -41,3 +41,22 @@ def test_ect_tracking_bulk_ok():
 
     for i, item in enumerate(items):
         assert item.object_id == object_ids[i]
+
+
+@trackr_vcr.use_cassette
+def test_ect_tracking_bulk_missing_object():
+    object_ids = [
+        'PO454515464BR',  # missing
+        'OA473577210BR',
+        'OA468082105BR',
+    ]
+
+    items = Trackr.track(
+        'ect',
+        object_ids,
+    )
+
+    assert len(items) == 2
+
+    for i, item in enumerate(items):
+        assert item.object_id == object_ids[i + 1]

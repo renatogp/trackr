@@ -1,0 +1,72 @@
+interactions:
+- request:
+    body: !!python/unicode "<?xml version='1.0' encoding='utf-8'?>\n<soap-env:Envelope\
+      \ xmlns:soap-env=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap-env:Body>\n\
+      \    <ns0:buscaEventosLista xmlns:ns0=\"http://resource.webservice.correios.com.br/\"\
+      >\n      <usuario>********</usuario>\n      <senha>********</senha>\n  \
+      \    <tipo>L</tipo>\n      <resultado>T</resultado>\n      <lingua>101</lingua>\n\
+      \      <objetos>PO454515464BR</objetos>\n      <objetos>OA473577210BR</objetos>\n\
+      \      <objetos>OA468082105BR</objetos>\n    </ns0:buscaEventosLista>\n  </soap-env:Body>\n\
+      </soap-env:Envelope>\n"
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['553']
+      Content-Type: [text/xml; charset=utf-8]
+      SOAPAction: ['"buscaEventosLista"']
+      User-Agent: [Zeep/1.5.0 (www.python-zeep.org)]
+    method: POST
+    uri: http://webservice.correios.com.br/service/rastro
+  response:
+    body: {string: "<?xml version=\"1.0\" encoding=\"utf-8\"?><soapenv:Envelope xmlns:soapenv=\"\
+        http://schemas.xmlsoap.org/soap/envelope/\"><soapenv:Header><X-OPNET-Transaction-Trace:X-OPNET-Transaction-Trace\
+        \ xmlns:X-OPNET-Transaction-Trace=\"http://opnet.com\">pid=124021,requestid=e5862e187a56d7bf2ae7af6bdda283c7451da00ec17b9cee</X-OPNET-Transaction-Trace:X-OPNET-Transaction-Trace></soapenv:Header><soapenv:Body><ns2:buscaEventosListaResponse\
+        \ xmlns:ns2=\"http://resource.webservice.correios.com.br/\"><return><versao>2.0</versao><qtd>3</qtd><objeto><numero>PO454515464BR</numero><erro>Objeto n\xE3o encontrado na base de dados dos Correios.</erro></objeto><objeto><numero>OA473577210BR</numero><sigla>OA</sigla><nome>ENCOMENDA\
+        \ SEDEX (ETIQ LOGICA)</nome><categoria>SEDEX</categoria><evento><tipo>BDE</tipo><status>20</status><data>14/07/2017</data><hora>17:20</hora><descricao>A\
+        \ entrega n\xE3o pode ser efetuada - Carteiro n\xE3o atendido</descricao><detalhe>Ser\xE1\
+        \ realizada nova tentativa de entrega</detalhe><local>AC ARTUR NOGUEIRA  \
+        \                     </local><codigo>13160970</codigo><cidade>ARTUR NOGUEIRA</cidade><uf>SP</uf></evento><evento><tipo>OEC</tipo><status>01</status><data>14/07/2017</data><hora>11:44</hora><descricao>Objeto\
+        \ saiu para entrega ao destinat\xE1rio</descricao><local>AC ARTUR NOGUEIRA\
+        \                       </local><codigo>13160970</codigo><cidade>ARTUR NOGUEIRA</cidade><uf>SP</uf></evento><evento><tipo>DO</tipo><status>01</status><data>14/07/2017</data><hora>04:11</hora><descricao>Objeto\
+        \ encaminhado </descricao><local>CTE CAMPINAS</local><codigo>13050971</codigo><cidade>INDAIATUBA</cidade><uf>SP</uf><destino><local>AC\
+        \ ARTUR NOGUEIRA                       </local><codigo>13160970</codigo><cidade>ARTUR\
+        \ NOGUEIRA</cidade><bairro>SANTA ROSA</bairro><uf>SP</uf></destino></evento><evento><tipo>RO</tipo><status>01</status><data>13/07/2017</data><hora>22:18</hora><descricao>Objeto\
+        \ encaminhado </descricao><local>CTCE RIBEIRAO PRETO</local><codigo>14095970</codigo><cidade>RIBEIRAO\
+        \ PRETO</cidade><uf>SP</uf><destino><local>CTE CAMPINAS</local><codigo>13050971</codigo><cidade>INDAIATUBA</cidade><bairro>HELVETIA</bairro><uf>SP</uf></destino></evento><evento><tipo>RO</tipo><status>01</status><data>13/07/2017</data><hora>19:52</hora><descricao>Objeto\
+        \ encaminhado </descricao><local>AGF SANTOS DUMONT</local><codigo>14405972</codigo><cidade>Franca</cidade><uf>SP</uf><destino><local>CTCE\
+        \ RIBEIRAO PRETO</local><codigo>14095970</codigo><cidade>RIBEIRAO PRETO</cidade><bairro>PARQUE\
+        \ INDUSTRIAL LAGOINHA</bairro><uf>SP</uf></destino></evento><evento><tipo>PO</tipo><status>09</status><data>13/07/2017</data><hora>17:35</hora><descricao>Objeto\
+        \ postado ap\xF3s o hor\xE1rio limite da ag\xEAncia</descricao><detalhe>Objeto\
+        \ sujeito a encaminhamento no pr\xF3ximo dia \xFAtil</detalhe><local>AGF SANTOS\
+        \ DUMONT</local><codigo>14405972</codigo><cidade>Franca</cidade><uf>SP</uf></evento></objeto><objeto><numero>OA468082105BR</numero><sigla>OA</sigla><nome>ENCOMENDA\
+        \ SEDEX (ETIQ LOGICA)</nome><categoria>SEDEX</categoria><evento><tipo>BDI</tipo><status>01</status><data>14/07/2017</data><hora>16:36</hora><descricao>Objeto\
+        \ entregue ao destinat\xE1rio</descricao><local>AC CASTILHO</local><codigo>16920970</codigo><cidade>Castilho</cidade><uf>SP</uf></evento><evento><tipo>LDI</tipo><status>01</status><data>14/07/2017</data><hora>13:12</hora><descricao>Objeto\
+        \ aguardando retirada no endere\xE7o indicado</descricao><detalhe>Para retir\xE1\
+        -lo, \xE9 preciso informar o c\xF3digo do objeto.</detalhe><local>AC CASTILHO</local><codigo>16920970</codigo><cidade>Castilho</cidade><uf>SP</uf><endereco><codigo>34119</codigo><cep>16920970</cep><logradouro>AV\
+        \ PRES GETULIO VARGAS 198</logradouro><localidade>Castilho</localidade><uf>SP</uf><bairro>Centro</bairro></endereco></evento><evento><tipo>RO</tipo><status>01</status><data>14/07/2017</data><hora>05:05</hora><descricao>Objeto\
+        \ encaminhado </descricao><local>CTCE BAURU</local><codigo>17034970</codigo><cidade>BAURU</cidade><uf>SP</uf><destino><local>AC\
+        \ CASTILHO</local><codigo>16920970</codigo><cidade>Castilho</cidade><bairro>Centro</bairro><uf>SP</uf></destino></evento><evento><tipo>RO</tipo><status>01</status><data>13/07/2017</data><hora>21:45</hora><descricao>Objeto\
+        \ encaminhado </descricao><local>CTCE RIBEIRAO PRETO</local><codigo>14095970</codigo><cidade>RIBEIRAO\
+        \ PRETO</cidade><uf>SP</uf><destino><local>CTCE BAURU</local><codigo>17034970</codigo><cidade>BAURU</cidade><bairro>Dist\
+        \ Indust Domingos Biancardi</bairro><uf>SP</uf></destino></evento><evento><tipo>RO</tipo><status>01</status><data>13/07/2017</data><hora>09:20</hora><descricao>Objeto\
+        \ encaminhado </descricao><local>AGF SANTOS DUMONT</local><codigo>14405972</codigo><cidade>Franca</cidade><uf>SP</uf><destino><local>CTCE\
+        \ RIBEIRAO PRETO</local><codigo>14095970</codigo><cidade>RIBEIRAO PRETO</cidade><bairro>PARQUE\
+        \ INDUSTRIAL LAGOINHA</bairro><uf>SP</uf></destino></evento><evento><tipo>PO</tipo><status>09</status><data>12/07/2017</data><hora>19:34</hora><descricao>Objeto\
+        \ postado ap\xF3s o hor\xE1rio limite da ag\xEAncia</descricao><detalhe>Objeto\
+        \ sujeito a encaminhamento no pr\xF3ximo dia \xFAtil</detalhe><local>AGF SANTOS\
+        \ DUMONT</local><codigo>14405972</codigo><cidade>Franca</cidade><uf>SP</uf></evento></objeto></return></ns2:buscaEventosListaResponse></soapenv:Body></soapenv:Envelope>"}
+    headers:
+      cache-control: ['no-cache="set-cookie, set-cookie2"']
+      connection: [Keep-Alive]
+      content-language: [pt-BR]
+      content-length: ['6013']
+      content-type: [text/xml; charset=utf-8]
+      date: ['Sat, 15 Jul 2017 12:33:05 GMT']
+      expires: ['Thu, 01 Dec 1994 16:00:00 GMT']
+      keep-alive: ['timeout=2, max=99982']
+      set-cookie: [_op_aixPageId=a2_e2074c73-c30a-40da-9874-6be95958c1d2; Path=/]
+      x-opnet-transaction-trace: [a2_e2074c73-c30a-40da-9874-6be95958c1d2]
+      x-powered-by: [Servlet/3.0]
+    status: {code: 200, message: OK}
+version: 1

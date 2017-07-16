@@ -45,7 +45,15 @@ class ECT(BaseCarrier):
             objetos=object_ids,
         )
 
-        return [self._handle_package(o) for o in data['objeto']]
+        objects = []
+        for o in data['objeto']:
+            try:
+                objects.append(self._handle_package(o))
+            except PackageNotFound:
+                # ignore
+                pass
+
+        return objects
 
     def _track_single(self, object_id):
         client = ZeepClient(

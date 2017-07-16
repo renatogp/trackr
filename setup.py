@@ -14,6 +14,8 @@ with open('requirements_dev.txt') as requirements_dev_file:
         requirements_dev_file.read().split('\n')[1:]
 
 
+test_requirements = [r for r in test_requirements if r]
+
 setup(
     name='trackr',
     version='1.0.0',
