@@ -50,7 +50,7 @@ Usage
 Or also using Trackr cli:
 
 .. code-block:: sh
-    
+
     $ trackr --carrier=ect --object-id=PN871429404BR
 
 
@@ -69,7 +69,7 @@ Data is retrieved from Correios using its SOAP webservice. For that you'll need 
 The easiest way to provide the credentials is exporting as env variable:
 
 .. code-block:: sh
-    
+
     export TRACKR_ECT_USERNAME=**
     export TRACKR_ECT_PASSWORD=**
 
@@ -79,6 +79,11 @@ You can also pass a function keyword args:
 .. code-block:: python
 
     package = Trackr.track('ect', 'PN871429404BR', ect_username='**', ect_password='**')
+
+
+.. warning::
+
+    The default username and password provided by Correios for integration purposes (username `ECT`, password`SRO`) will not allow bulk tracking.
 
 
 Fake
@@ -102,7 +107,7 @@ Fake carrier is meant to be used when testing and developing integrations. It wi
 Integrating a new carrier
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To add a new carrier, inherit `carriers.base.BaseCarrier` and fillout the `track()` method, it must return a `carriers.base.Package` instance. See an example below:
+To add a new carrier, inherit `carriers.base.BaseCarrier` and fillout `_track_single()` and/or `_track_bulk()` methods, it must return one instance or a list of `carriers.base.Package` instance. See an example below:
 
 .. code-block:: python
 
@@ -114,7 +119,7 @@ To add a new carrier, inherit `carriers.base.BaseCarrier` and fillout the `track
         id = 'mycarrier'
         name = 'My Carrier'
 
-        def track(self, object_id):
+        def _track_single(self, object_id):
 
             # ... fetch data from carrier's data source
 

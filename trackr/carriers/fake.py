@@ -7,7 +7,7 @@ class FakeCarrier(BaseCarrier):
     id = 'fake'
     name = 'Fake Carrier'
 
-    def track(self, object_id):
+    def _track_single(self, object_id):
         package = self.create_package(
             object_id=object_id,
             service_name='Default',

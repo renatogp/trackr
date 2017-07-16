@@ -30,7 +30,24 @@ class ECT(BaseCarrier):
 
         super(ECT, self).__init__(**kwargs)
 
-    def _fetch_soap_ws(self, object_id):
+    def _track_bulk(self, object_ids):
+        client = ZeepClient(
+            '{}/soap/Rastro.wsdl'.format(
+                os.path.dirname(os.path.abspath(__file__)))
+        )
+
+        data = client.service.buscaEventosLista(
+            usuario=self.ect_username,
+            senha=self.ect_password,
+            tipo='L',
+            resultado='T',
+            lingua='101',
+            objetos=object_ids,
+        )
+
+        return [self._handle_package(o) for o in data['objeto']]
+
+    def _track_single(self, object_id):
         client = ZeepClient(
             '{}/soap/Rastro.wsdl'.format(
                 os.path.dirname(os.path.abspath(__file__)))
@@ -45,19 +62,17 @@ class ECT(BaseCarrier):
             objetos=object_id,
         )
 
-        return data['objeto'][0]
+        return self._handle_package(data['objeto'][0])
 
-    def track(self, object_id):
-        data = self._fetch_soap_ws(object_id)
-
+    def _handle_package(self, data):
         if not any([data['nome'], data['categoria'], data['evento']]):
             raise PackageNotFound(
-                object_id=object_id,
+                object_id=data['numero'],
                 carrier_message=data['erro'],
             )
 
         package = self.create_package(
-            object_id=object_id,
+            object_id=data['numero'],
             service_name=data['categoria'],
             extra_info={
                 'service_detail': data['nome'],

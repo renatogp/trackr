@@ -46,8 +46,16 @@ class BaseCarrier(object):
     def __unicode__(self):
         return self.name
 
+    def _track_bulk(self, object_id):
+        raise NotImplementedError()
+
+    def _track_single(self, object_ids):
+        raise NotImplementedError()
+
     def track(self, object_id):
-        return NotImplementedError()
+        if isinstance(object_id, list):
+            return self._track_bulk(object_id)
+        return self._track_single(object_id)
 
     def create_package(self, object_id, service_name, extra_info=None):
         return self.package_class(self.__class__, object_id, service_name, extra_info)

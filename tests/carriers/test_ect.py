@@ -24,3 +24,20 @@ def test_ect_tracking_not_found():
     with pytest.raises(PackageNotFound) as exc_info:
         Trackr.track('ect', 'SX123456789BR')
         assert exc_info.value.object_id == 'SX123456789BR'
+
+
+@trackr_vcr.use_cassette
+def test_ect_tracking_bulk_ok():
+    object_ids = [
+        'PO454515464BR',
+        'OA473577210BR',
+        'OA468082105BR',
+    ]
+
+    items = Trackr.track(
+        'ect',
+        object_ids,
+    )
+
+    for i, item in enumerate(items):
+        assert item.object_id == object_ids[i]
