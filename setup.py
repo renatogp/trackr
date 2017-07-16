@@ -16,7 +16,7 @@ with open('requirements_dev.txt') as requirements_dev_file:
 
 setup(
     name='trackr',
-    version='0.1.5',
+    version='1.0.0',
     description="-",
     long_description=readme,
     author="Renato Pedigoni",
