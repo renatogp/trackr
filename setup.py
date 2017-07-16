@@ -18,7 +18,7 @@ test_requirements = [r for r in test_requirements if r]
 
 setup(
     name='trackr',
-    version='1.0.0',
+    version='1.1.0',
     description="-",
     long_description=readme,
     author="Renato Pedigoni",
