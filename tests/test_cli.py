@@ -13,7 +13,7 @@ def test_command_line_interface_package_found():
     runner = CliRunner()
 
     help_result = runner.invoke(
-        cli.main, ['--carrier', 'ect', '--object-id', 'PN871429404BR'])
+        cli.main, ['--carrier', 'ect', '--object-id', 'AA356025307BR'])
     assert help_result.exit_code == 0
     assert 'Package found!' in help_result.output
 

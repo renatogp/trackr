@@ -1,6 +1,4 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 from setuptools import setup
 
 with open('README.rst') as readme_file:
@@ -18,7 +16,7 @@ test_requirements = [r for r in test_requirements if r]
 
 setup(
     name='trackr',
-    version='1.0.0',
+    version='1.2.0',
     description="-",
     long_description=readme,
     author="Renato Pedigoni",

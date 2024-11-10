@@ -10,10 +10,10 @@ from .. import trackr_vcr
 
 @trackr_vcr.use_cassette
 def test_ect_tracking_ok():
-    p = Trackr.track('ect', 'PN871429404BR')
+    p = Trackr.track('ect', 'AA356025307BR')
 
     assert isinstance(p, Package)
-    assert p.object_id == 'PN871429404BR'
+    assert p.object_id == 'AA356025307BR'
 
     for t in p.tracking_info:
         assert isinstance(t, TrackingInfo)
@@ -29,9 +29,8 @@ def test_ect_tracking_not_found():
 @trackr_vcr.use_cassette
 def test_ect_tracking_bulk_ok():
     object_ids = [
-        'PO454515464BR',
-        'OA473577210BR',
-        'OA468082105BR',
+        'AA356025307BR',
+        'QN639264234BR',
     ]
 
     items = Trackr.track(
@@ -46,9 +45,9 @@ def test_ect_tracking_bulk_ok():
 @trackr_vcr.use_cassette
 def test_ect_tracking_bulk_missing_object():
     object_ids = [
-        'PO454515464BR',  # missing
-        'OA473577210BR',
-        'OA468082105BR',
+        'PO000000000BR',  # missing
+        'AA356025307BR',
+        'QN639264234BR',
     ]
 
     items = Trackr.track(
