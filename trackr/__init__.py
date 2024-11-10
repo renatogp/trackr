@@ -3,4 +3,4 @@ from .main import Trackr  # noqa
 
 __author__ = """Renato Pedigoni"""
 __email__ = 'renatopedigoni@gmail.com'
-__version__ = '1.2.0'
+__version__ = '2.0.0'
