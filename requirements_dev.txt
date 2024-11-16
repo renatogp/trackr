@@ -11,3 +11,4 @@ tox==4.23.2
 vcrpy==6.0.2
 watchdog==6.0.0
 wheel==0.45.0
+twine==5.1.1

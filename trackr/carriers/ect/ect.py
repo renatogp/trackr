@@ -95,7 +95,7 @@ class ECT(BaseCarrier):
                 date=datetime(*map(int, date.split('-') + time.split(':'))),
                 location=u'{} - {} - {}'.format(
                     event['unidade']['tipo'],
-                    event['unidade']['endereco']['cidade'],
+                    event['unidade']['endereco'].get('cidade', '-'),
                     event['unidade']['endereco']['uf'],
                 ),
                 status=event['descricao'].strip(),
