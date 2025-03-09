@@ -40,8 +40,13 @@ class ECT(BaseCarrier):
         """
         Generate token for Correios webservice
         """
+        if not self.ect_card_number:
+            endpoint = 'https://api.correios.com.br/token/v1/autentica'
+        else:
+            endpoint = 'https://api.correios.com.br/token/v1/autentica/cartaopostagem'
+
         response = requests.post(
-            'https://api.correios.com.br/token/v1/autentica/cartaopostagem',
+            endpoint,
             auth=HTTPBasicAuth(self.ect_username, self.ect_api_key),
             data=json.dumps({"numero": self.ect_card_number}),
             headers={"content-type": "application/json", }
